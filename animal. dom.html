@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1{
+            text-align: center;
+        }
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            text-align: center;
+        }
+         #main>div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+
+        .Avatar{
+            width:100%;
+            height:400px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Forest Animal</h1>
+    <div id="main"></div>
+</body>
+<script>
+    let Animals=[{
+        name:"lion",
+       
+        image:"https://www.nicepng.com/png/detail/1-16110_lion-png-transparent-images-lion-png.png",
+    },
+    {
+        name:"Tiger",
+       
+        image:"https://i.pinimg.com/474x/90/9a/43/909a4354eeb243a200772e0b0a841c50.jpg",
+    },
+    {
+        name:"Monkey",
+       
+        image:"https://upload.wikimedia.org/wikipedia/commons/4/43/Bonnet_macaque_%28Macaca_radiata%29_Photograph_By_Shantanu_Kuveskar.jpg",
+    },
+    {
+        name:"cheetah",
+       
+        image:"https://i.pinimg.com/474x/86/34/01/863401020915ac41b709bfe7febf9f7b.jpg",
+    },
+
+    {
+        name:"Deer",
+       
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZji_qosp1bhJ4tNGziOGCNHfr1kK-IUp0Zg&s",
+    },
+
+    {
+        name:"Bear",
+       
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmm7_U8TPhTCr48rx2zT8I9jLMcReJ-Toaz6QZT5K8iBZ__7uI1svpCj3ejsal6oNGOxk&usqp=CAU",
+    },
+
+    {
+        name:"lion",
+       
+        image:"https://www.nicepng.com/png/detail/1-16110_lion-png-transparent-images-lion-png.png",
+    },
+
+
+
+
+];
+
+let  main=document.querySelector("#main");
+
+Animals.map(function(el,index){
+let name=document.createElement("h1");
+name.innerText=el.name;
+
+
+ let profile=document.createElement("img");
+ profile.setAttribute("class","Avatar");
+ profile.src=el.image;
+
+
+ let div=document.createElement("div");
+ div.setAttribute("class","container")
+
+
+        div.append(name,profile);
+
+        main.append(div);
+
+})
+
+</script>
+</html>

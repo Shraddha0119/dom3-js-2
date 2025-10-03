@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:20px;
+            text-align: center;
+        }
+
+        #main>div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .Avatar{
+            width:100%;
+            height:300px;
+        }
+        .logo{
+            width: 100px;
+            padding: 40px 5px 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invester</h1>
+    <div id="main"></div>
+</body>
+<script>
+    let investors=[
+        {
+            name:"Elon musk",
+            role:"Founder & ceo",
+            image:"https://assets-us-01.kc-usercontent.com/5cb25086-82d2-4c89-94f0-8450813a0fd3/0c3fcefb-bc28-4af6-985e-0c3b499ae832/Elon_Musk_Royal_Society.jpg?fm=jpg&auto=format",
+            companylogo:"https://wdl-1f835.kxcdn.com/wp-content/uploads/2020/11/featured.png",
+          },
+
+          {
+            name:"venita",
+            role:"Founder & ceo",
+            image:"https://www.entrepreneurindia.com/tech25web/2023/images/speakers/vineetas.jpg",
+            companylogo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFgEyMC34g7xLoM51rC5k7MN2qCdoLD0lNAA&s",
+          },
+          {
+            name:"namita thaper",
+            role:"Founder & ceo",
+            image:"https://www.bookmyartistindia.com/wp-content/uploads/2024/10/Namita-Thapar.jpg",
+            companylogo:"https://www.consultancy.in/illustrations/news/detail/2023-11-20-125224414-Emcure_Pharma_hires_corporate_finance_advisors_for_IPO.jpg",
+          },
+           {
+            name:"Aman",
+            role:"Founder & ceo",
+            image:"https://www.financialexpress.com/wp-content/uploads/2024/04/Gupta-1.jpg",
+            companylogo:"https://www.radioandmusic.com/sites/www.radioandmusic.com/files/images/entertainment/2025/02/27/boat.jpg",
+          },
+           {
+            name:"Sunder Pichai",
+            role:"Founder & ceo",
+            image:"https://i.dailymail.co.uk/1s/2021/06/22/17/44536689-9712945-A_number_of_current_and_former_executives_at_Google_have_critici-m-10_1624378904457.jpg",
+            companylogo:"https://www.logodesignteam.com/blog/wp-content/uploads/2017/07/Google_Logo.jpg",
+          },
+
+          {
+            name:"Mukesh Ambani",
+            role:"Founder & ceo",
+            image:"https://rilstaticasset.akamaized.net/sites/default/files/2022-09/mukesh-ambani.png",
+            companylogo:"https://aerorailp.com/wp-content/uploads/2024/01/reliance_industries_limited_logo.png",
+          },
+          {
+            name:"Mark Zukerberge",
+            role:"Founder & ceo",
+            image:"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202408/meta-ceo-mark-zuckerberg-242205702-16x9.jpg?VersionId=PhIVwzc1t6UuKyJgY63o.cf7_r.Keb3L&size=690:388",
+            companylogo:"https://clinmedjournals.org/articles/blogs/img/facebook-login.jpg",
+          },
+          {
+            name:"Elon musk",
+            role:"Founder & ceo",
+            image:"https://assets-us-01.kc-usercontent.com/5cb25086-82d2-4c89-94f0-8450813a0fd3/0c3fcefb-bc28-4af6-985e-0c3b499ae832/Elon_Musk_Royal_Society.jpg?fm=jpg&auto=format",
+            companylogo:"https://wdl-1f835.kxcdn.com/wp-content/uploads/2020/11/featured.png",
+          },
+
+           {
+            name:"Aman",
+            role:"Founder & ceo",
+            image:"https://www.financialexpress.com/wp-content/uploads/2024/04/Gupta-1.jpg",
+            companylogo:"https://www.radioandmusic.com/sites/www.radioandmusic.com/files/images/entertainment/2025/02/27/boat.jpg",
+          },
+           {
+            name:"venita",
+            role:"Founder & ceo",
+            image:"https://www.entrepreneurindia.com/tech25web/2023/images/speakers/vineetas.jpg",
+            companylogo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFgEyMC34g7xLoM51rC5k7MN2qCdoLD0lNAA&s",
+          },
+          {
+            name:"namita thaper",
+            role:"Founder & ceo",
+            image:"https://www.bookmyartistindia.com/wp-content/uploads/2024/10/Namita-Thapar.jpg",
+            companylogo:"https://www.consultancy.in/illustrations/news/detail/2023-11-20-125224414-Emcure_Pharma_hires_corporate_finance_advisors_for_IPO.jpg",
+          },
+          {
+            name:"Mark Zukerberge",
+            role:"Founder & ceo",
+            image:"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202408/meta-ceo-mark-zuckerberg-242205702-16x9.jpg?VersionId=PhIVwzc1t6UuKyJgY63o.cf7_r.Keb3L&size=690:388",
+            companylogo:"https://clinmedjournals.org/articles/blogs/img/facebook-login.jpg",
+          },
+         
+          
+    ];
+
+    let main=document.querySelector("#main");
+
+    investors.map(function(el,index){
+        let name=document.createElement("h1");
+        name.innerText=el.name;
+
+
+        let role=document.createElement("p");
+        role.innerText=el.role;
+
+
+        let profile=document.createElement("img");
+        profile.setAttribute("class","Avatar");
+        profile.src=el.image;
+
+        let logo=document.createElement("img");
+        logo.setAttribute("class","logo")
+        logo.src=el.companylogo;
+
+        let div=document.createElement("div");
+        div.setAttribute("class","container")
+
+
+        div.append(profile,name,role,logo);
+
+        main.append(div);
+    })
+</script>
+</html>
